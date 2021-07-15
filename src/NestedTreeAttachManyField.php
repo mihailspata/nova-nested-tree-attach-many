@@ -222,4 +222,15 @@ class NestedTreeAttachManyField extends Field
 
         return $this;
     }
+
+
+
+    public function setDisabledId( $value = [] ): NestedTreeAttachManyField
+    {
+        $this->withMeta([
+            'disabledId' => $value,
+        ]);
+
+        return $this;
+    }
 }

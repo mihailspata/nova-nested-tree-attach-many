@@ -45,8 +45,13 @@ export default {
       return {
         id: node[this.field.idKey],
         label: node[this.field.labelKey],
-        isDisabled: node.hasOwnProperty(this.field.activeKey)
-            && node[this.field.activeKey] === this.field.isActiveFalse,
+        isDisabled: (
+            (node.hasOwnProperty(this.field.activeKey)
+            && node[this.field.activeKey] === this.field.isActiveFalse)
+            ||
+            (!!this.field.disabledId
+            && this.field.disabledId.includes(node[this.field.idKey]))
+        ),
         children: node.hasOwnProperty(this.field.childrenKey)
             && node[this.field.childrenKey].length > 0
             ? node[this.field.childrenKey]
