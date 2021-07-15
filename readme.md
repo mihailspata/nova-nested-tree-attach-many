@@ -64,6 +64,7 @@ Here are a few customization options
 - `->withAlwaysOpen(bool $alwaysOpen)` // - by default select is open, but you can change it behavior
 - `->withFlatten(bool $flatten)` // - by default flatten is enabled, but you can change it behavior
 - `->useSingleSelect()` // - ability for select only one value
+- `->setDisabledId([$this->id, 8, 88, ...])` // Disable current key, and any other
 
 
 ### Authorization
